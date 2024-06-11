@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tetris</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lilita+One&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="tetris-title">
+      <span class="tetris-title__word">T</span><span class="tetris-title__word">E</span><span class="tetris-title__word">T</span><span class="tetris-title__word">R</span><span class="tetris-title__word">I</span><span class="tetris-title__word">S</span>
+    </h1>
+
+    <div class="container">
+      <div class="main-container start">
+        <div class="overlay" id="overlay-countdown">
+          <p id="countdown">3</p>
+        </div>
+        <div class="overlay" id="overlay-start">
+          <!-- HTML !-->
+          <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <ul id="scoreboard-list">
+            </ul>
+          </div>  
+
+          <p>Use the <strong>up arrow</strong> to rotate the pieces</p>
+
+          <p>Use the <strong>down arrow</strong> to speed up the pieces</p>
+
+          <p>Use the <strong>up arrow</strong> to pause the game</p>
+
+          <p>Use the <strong>left arrow</strong> to move the pieces to the left</p>
+
+          <p>Use the <strong>right arrow</strong> to move the pieces to the right</p>
+
+          <button class="button-85" role="button" id="start-button">Press to start</button>
+        </div>
+
+        <canvas id="tetris-canvas"></canvas>
+
+        <div class="overlay" id="overlay-pause">
+          <p>Pause</p>
+          <button id="resume-button">Resume</button>
+        </div>
+        <div class="overlay" id="overlay-game-over">
+          <h1>Game Over</h1>
+
+          <button id="restart-button">Restart</button>
+
+          <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <ul id="scoreboard-list">
+            </ul>
+          </div>  
+        </div>
+
+      </div>
+
+      <div class="left">
+        <div class="sub-container buttons">
+          <img id="left-button" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0IBdjRxOkFtJny9k8nhT37AMIlTLNr_MGrA&s"/>
+          <img id="right-button" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuiryyZvuvyObP6yNbLa6cJapNpHcNXypSw&s"/>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ26x97PRm12t4dNd2MVo1nNKohCxf1931orA&s" alt="down" id="down-button">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6rgTRjjTSgxXi4fPwK4UILj2blSyaly0oFg&s" alt="bottom" id="drop-button">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0daThEZu4fO3d5wXjc_Ghb0nmF8QTA9OTfw&s" alt="rotate" id="rotate-button" />
+        </div>
+        <div class="sub-container score">
+          <p>Score: <span id="score">0</span></p>
+        </div>
+        <div class="sub-container level">
+          <p>Level: <span id="level">1</span></p>
+        </div>
+        <div class="sub-container lines">
+          <p>Lines: <span id="lines">0</span></p>
+        </div>
+      </div>
+      <div class="right">
+        <div id="next-pieces">
+          <canvas id="next-piece-1" ></canvas>
+          <canvas id="next-piece-2"></canvas>
+          <canvas id="next-piece-3"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id="user-name">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <button id="submit-button">Submit</button>
+    </div>
+
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
